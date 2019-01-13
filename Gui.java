@@ -5,6 +5,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 public class Gui extends JFrame{
 
@@ -48,8 +49,14 @@ public class Gui extends JFrame{
 	}
 
 	public void getFile() {
-		
-		System.out.println("code reached");
+		JFileChooser fc = new JFileChooser("."); //get contents of current folder
+		int choice = fc.showOpenDialog(this);
+		if( choice == JFileChooser.APPROVE_OPTION) {
+			String fn = fc.getSelectedFile().getAbsolutePath();
+			JOptionPane.showMessageDialog(this, fn, "The file you chose", JOptionPane.PLAIN_MESSAGE);
+			System.out.println(fn);
+		}
+		//System.out.println("code reached");
 	}
 	
 	public static void main(String[] args) {
