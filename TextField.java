@@ -6,12 +6,13 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.TreeSet;
 
-public class AutoCompleteTextField extends JTextField implements KeyListener{
+public class TextField extends JTextField implements KeyListener{
 
-	static TreeSet<String> tree = null;
+//	static TreeSet<String> tree = null;
 	
-	AutoCompleteTextField(int cols){
+	TextField(int cols){
 		super(cols);
+/*
 		//this.requestFocusInWindow();
 		this.addKeyListener(this);
 		if(AutoCompleteTextField.tree == null){
@@ -28,11 +29,13 @@ public class AutoCompleteTextField extends JTextField implements KeyListener{
 				System.exit(1);
 			}
 		}
+*/
 	}
 
 	public void keyPressed(KeyEvent e) {}
 	public void keyReleased(KeyEvent e) {}
 	public void keyTyped(KeyEvent e) {
+/*
 		//e.consume();
 		char c = e.getKeyChar();//get the character that is typed
 		String input;
@@ -60,6 +63,7 @@ public class AutoCompleteTextField extends JTextField implements KeyListener{
 		}
 		
 		e.consume();
+*/
 	}
 	
 }

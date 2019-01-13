@@ -4,7 +4,7 @@ import javax.swing.JButton;
 
 public class Button extends JButton implements MouseListener{
 	
-	AutoCompleteTextField textfield;
+	TextField textfield;
 	
 	/* old constructor
 	Button(String s){
@@ -12,7 +12,7 @@ public class Button extends JButton implements MouseListener{
 	}
 	*/
 	
-	Button(String s, AutoCompleteTextField tf){
+	Button(String s, TextField tf){
 		this.setText(s);
 		this.addMouseListener(this);
 		this.textfield = tf;

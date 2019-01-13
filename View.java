@@ -10,7 +10,7 @@ class View extends JPanel{
 		//this.add(new Button("This is a button"));
 		*/
 		
-		AutoCompleteTextField tf = new AutoCompleteTextField(20);
+		TextField tf = new TextField(20);
 		this.add(new StaticTextField("Enter words here:")); //add static text field
 		this.add(tf); //add JTextField
 		this.add(new Button("Clear Text Box", tf)); //add JButton

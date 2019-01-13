@@ -7,9 +7,9 @@ import javax.swing.JMenuItem;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
-public class Gui extends JFrame{
+public class vstructure extends JFrame{
 
-	public Gui() {
+	public vstructure() {
 		View view = new View();
 		createMenuBar();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -60,7 +60,7 @@ public class Gui extends JFrame{
 	}
 	
 	public static void main(String[] args) {
-		new Gui();
+		new vstructure();
 	}
 
 }
