@@ -3,15 +3,16 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class IndFile {
+	String fn;
 
-	IndFile(String s){
-		String fn = s;
+	IndFile(String f){
+		this.fn = f;
 	}
 
-	public void parseInd(String f) {
+	public void parseInd() {
 		Scanner s;
 		try{
-			s = new Scanner(new File(f));
+			s = new Scanner(new File(this.fn));
 			while(s.hasNextLine()) {
 				String line = s.nextLine();
 				System.out.println(line);

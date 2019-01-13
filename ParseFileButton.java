@@ -28,6 +28,8 @@ public class ParseFileButton extends JButton implements MouseListener{
 
 	public void parseFile(String f) {
 		System.out.println(f);
+		IndFile ind = new IndFile(f);
+		ind.parseInd();
 	}
 	
 }
