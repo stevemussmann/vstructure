@@ -11,9 +11,9 @@ class View extends JPanel{
 		*/
 		
 		TextField tf = new TextField(20);
-		this.add(new StaticTextField("Enter words here:")); //add static text field
+		this.add(new StaticTextField("Path to Clumpp Ind File:")); //add static text field
 		this.add(tf); //add JTextField
-		this.add(new Button("Clear Text Box", tf)); //add JButton
+		this.add(new OpenFileButton("Open File", tf)); //add JButton
 	}
 	
 }
