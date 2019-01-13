@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JFileChooser;
 
 public class Gui extends JFrame{
 
@@ -25,17 +26,30 @@ public class Gui extends JFrame{
 		JMenu fileMenu = new JMenu("File");
 		fileMenu.setMnemonic(KeyEvent.VK_F);
 
-		//Exit item for File Menu
-		JMenuItem eMenuItem = new JMenuItem("Exit");
-		eMenuItem.setMnemonic(KeyEvent.VK_E);
-		eMenuItem.setToolTipText("Exit Application");
-		eMenuItem.addActionListener((event) -> System.exit(0));
+		//Open item for File Menu
+		JMenuItem open = new JMenuItem("Open");
+		open.addActionListener((event) -> this.getFile());
 
-		fileMenu.add(eMenuItem);
+		//Exit item for File Menu
+		JMenuItem exit = new JMenuItem("Exit");
+		exit.setMnemonic(KeyEvent.VK_E);
+		exit.setToolTipText("Exit Application");
+		exit.addActionListener((event) -> System.exit(0));
+
+		//file menu items
+		fileMenu.add(open);
+		fileMenu.add(exit);
+
+		//menu bar items
 		menubar.add(fileMenu);
 
 		setJMenuBar(menubar);
 
+	}
+
+	public void getFile() {
+		
+		System.out.println("code reached");
 	}
 	
 	public static void main(String[] args) {
