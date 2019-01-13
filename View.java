@@ -14,6 +14,7 @@ class View extends JPanel{
 		this.add(new StaticTextField("Path to Clumpp Ind File:")); //add static text field
 		this.add(tf); //add JTextField
 		this.add(new OpenFileButton("Open File", tf)); //add JButton
+		this.add(new ParseFileButton("Read File", tf));
 	}
 	
 }
