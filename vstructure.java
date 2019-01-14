@@ -15,7 +15,7 @@ public class vstructure extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.getContentPane().add(view);
 		this.setTitle("Word Search");
-		this.setSize(750,150);
+		this.setSize(750,350);
 		this.setVisible(true);
 		
 	}

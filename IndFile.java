@@ -1,20 +1,33 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
+import javax.swing.DefaultListModel;
 
 public class IndFile {
 	String fn;
 	HashMap<String, HashMap<String, double[]>> data;
+	List<String> pops;
+	DefaultListModel<String> dlm;
 	int sPops;
 	int gPops;
+
+	PopList poplist;
 
 	IndFile(String f){
 		this.fn = f;
 	}
 
-	public void parseInd() {
+	public void parseInd(PopList pl) {
+	//public void parseInd() {
+		this.poplist = pl;
+
+		this.dlm = new DefaultListModel<String>();
+
 		Scanner s;
 		try{
 			s = new Scanner(new File(this.fn));
@@ -32,6 +45,18 @@ public class IndFile {
 
 		System.out.println("# sample pops = " + Integer.toString(this.sPops));
 		System.out.println("# genetic pops = " + Integer.toString(this.gPops));
+
+
+		//The following lines add the population list to the Jlist
+		this.pops = new ArrayList<String>(data.keySet());
+
+		Iterator<String> it = this.pops.iterator();
+		while(it.hasNext()){
+			dlm.addElement(it.next());
+		}
+
+		poplist.setModel(dlm);
+		
 	}
 
 	int parseLine(String l) {
