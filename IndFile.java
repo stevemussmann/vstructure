@@ -7,6 +7,8 @@ import java.util.Scanner;
 public class IndFile {
 	String fn;
 	HashMap<String, HashMap<String, double[]>> data;
+	int sPops;
+	int gPops;
 
 	IndFile(String f){
 		this.fn = f;
@@ -19,18 +21,25 @@ public class IndFile {
 			data = new HashMap<String, HashMap<String, double[]>>();
 			while(s.hasNextLine()) {
 				String line = s.nextLine();
-				this.parseLine(line);
+				this.gPops = this.parseLine(line);
 			}
 		}catch(FileNotFoundException e){
 			e.printStackTrace(System.err);
 			System.exit(1);
 		}
+
+		this.sPops = data.size(); // record number of sample populations
+
+		System.out.println("# sample pops = " + Integer.toString(this.sPops));
+		System.out.println("# genetic pops = " + Integer.toString(this.gPops));
 	}
 
-	void parseLine(String l) {
+	int parseLine(String l) {
 		//System.out.println(l);
 		String[] sl = l.split("\\s+"); //split line
 		String[] subset = Arrays.copyOfRange(sl, 5, sl.length); //subset columns w/ancestry
+
+		int nAncestry = sl.length - 5;
 
 		double[] ancestry = this.DoubleArray(subset); //convert String array to double array
 		System.out.println(sl[1].toString() + "," + Arrays.toString(ancestry)); //test print
@@ -48,6 +57,8 @@ public class IndFile {
 			data.get(sl[3]).put(sl[1],ancestry);
 			
 		}
+
+		return nAncestry;
 
 	}
 
