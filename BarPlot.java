@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -15,6 +16,11 @@ import javafx.scene.chart.StackedBarChart;
 import javafx.scene.chart.XYChart;
 
 public class BarPlot extends Application {
+
+	BarPlot(List<String> l, int np) {
+		
+	}
+
 	@Override
 	public void start(Stage stage) {
 
@@ -32,6 +38,11 @@ public class BarPlot extends Application {
 		StackedBarChart<String, Number> stackedBarChart = new StackedBarChart<>(xAxis, yAxis);
 		//stackedBarChart.setTitle("Historic World Population by Region");
 
+		//get data from IndFile class
+
+
+
+/*
 	String file = "ClumppIndFile.output.6";
 	Scanner s;
 	ArrayList<String> list = new ArrayList<>();
@@ -56,26 +67,29 @@ public class BarPlot extends Application {
 	}
 
 	//System.out.println(list);
-      
-	//set gap between bars on plot
-	stackedBarChart.setCategoryGap(0.0);
-	stackedBarChart.setPrefSize(1200,400);
+*/
+    
+		//set gap between bars on plot
+		stackedBarChart.setCategoryGap(0.0);
+		stackedBarChart.setPrefSize(1200,400);
  
-      //Creating a Group object  
-      Group root = new Group(stackedBarChart); 
-         
-      //Creating a scene object 
-      Scene scene = new Scene(root, 1300, 500);  
+		//Creating a Group object
+		Group root = new Group(stackedBarChart);
+
+		//Creating a scene object
+		Scene scene = new Scene(root, 1300, 500);
       
-      //Setting title to the Stage 
-      stage.setTitle("stackedBarChart"); 
-         
-      //Adding scene to the stage 
-      stage.setScene(scene); 
-         
-      //Displaying the contents of the stage 
-      stage.show();         
-   } 
+		//Setting title to the Stage
+		stage.setTitle("stackedBarChart");
+
+		//Adding scene to the stage
+		stage.setScene(scene);
+
+		//Displaying the contents of the stage
+		stage.show();
+	}
+
+
    public static void main(String args[]){ 
       launch(args); 
    } 
