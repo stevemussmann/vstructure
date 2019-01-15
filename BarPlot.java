@@ -1,10 +1,12 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
+//import java.io.File;
+//import java.io.FileNotFoundException;
+//import java.util.Arrays;
+//import java.util.ArrayList;
+import java.util.HashMap;
+//import java.util.Iterator;
+//import java.util.List;
+import java.util.Map;
+//import java.util.Scanner;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.scene.Group;
@@ -17,7 +19,7 @@ import javafx.scene.chart.XYChart;
 
 public class BarPlot extends Application {
 
-	BarPlot(List<String> l, int np) {
+	BarPlot() {
 		
 	}
 
@@ -40,7 +42,18 @@ public class BarPlot extends Application {
 
 		//get data from IndFile class
 
+		//System.out.println(IndFile.fn);
 
+		//implementing read of data. Old test method is block commented below new method
+
+		for(Map.Entry<String, HashMap<String, double[]>> popEntry : IndFile.data.entrySet()){
+			String pop = popEntry.getKey();
+			
+			for(Map.Entry<String, double[]> indEntry : popEntry.getValue().entrySet()){
+				String ind = indEntry.getKey();
+				double[] anc = indEntry.getValue();
+			}
+		}
 
 /*
 	String file = "ClumppIndFile.output.6";

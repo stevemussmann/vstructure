@@ -9,12 +9,12 @@ import java.util.Scanner;
 import javax.swing.DefaultListModel;
 
 public class IndFile {
-	String fn;
-	HashMap<String, HashMap<String, double[]>> data;
+	static String fn;
+	static HashMap<String, HashMap<String, double[]>> data;
 	List<String> pops;
 	DefaultListModel<String> dlm;
 	int sPops;
-	int gPops;
+	static int gPops;
 
 	PopList poplist;
 

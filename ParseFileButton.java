@@ -5,7 +5,8 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 public class ParseFileButton extends JButton implements MouseListener{
-	
+
+	static IndFile ind;	
 	TextField textfield;
 	PopList poplist;
 	
@@ -31,8 +32,8 @@ public class ParseFileButton extends JButton implements MouseListener{
 
 	public void parseFile(String f) {
 		System.out.println(f);
-		IndFile ind = new IndFile(f);
-		ind.parseInd(this.poplist);
+		this.ind = new IndFile(f);
+		this.ind.parseInd(this.poplist);
 		//ind.parseInd();
 	}
 	
