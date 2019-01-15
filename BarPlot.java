@@ -45,14 +45,22 @@ public class BarPlot extends Application {
 		//System.out.println(IndFile.fn);
 
 		//implementing read of data. Old test method is block commented below new method
+		for(int i=0; i<IndFile.gPops; i++){
+			XYChart.Series<String, Number> series = new XYChart.Series<>();
+			series.setName(Integer.toString(i));
 
-		for(Map.Entry<String, HashMap<String, double[]>> popEntry : IndFile.data.entrySet()){
-			String pop = popEntry.getKey();
-			
-			for(Map.Entry<String, double[]> indEntry : popEntry.getValue().entrySet()){
-				String ind = indEntry.getKey();
-				double[] anc = indEntry.getValue();
+			for(Map.Entry<String, HashMap<String, double[]>> popEntry : IndFile.data.entrySet()){
+				String pop = popEntry.getKey();
+		
+				for(Map.Entry<String, double[]> indEntry : popEntry.getValue().entrySet()){
+					String ind = indEntry.getKey();
+					double[] anc = indEntry.getValue();
+
+					series.getData().add(new XYChart.Data<>(ind, anc[i]));
+
+				}
 			}
+			stackedBarChart.getData().add(series);
 		}
 
 /*
