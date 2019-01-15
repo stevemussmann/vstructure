@@ -6,6 +6,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+//import javafx.application.Application;
 
 public class vstructure extends JFrame{
 
@@ -60,6 +61,7 @@ public class vstructure extends JFrame{
 	}
 	
 	public static void main(String[] args) {
+		//Application.launch(BarPlot.class, args);
 		new vstructure();
 	}
 

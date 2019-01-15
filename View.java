@@ -36,6 +36,8 @@ class View extends JPanel implements ActionListener{
 		this.add(buttonOut);
 		this.add(rmScroll);
 
+		this.add(new PlotButton("Make Plot", tf));
+
 	}
 
 	@Override
